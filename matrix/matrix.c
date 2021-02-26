@@ -2,37 +2,39 @@
 #include <stdlib.h>
 #include "matrix.h"
 
+// Declara as variáveis internas da estrutura "Matrix" (struct matrix)
 struct matrix {
     int len_rows;
     int len_columns;
     float **values;
 };
 
+// Função pointeiro do tipo Matriz, retorna uma matriz de dimensões rows X
 Matrix* create_matrix (int rows, int columns) {
     int i, j;
-    Matrix *mat;
+    Matrix *new_mat;
     
-    mat = (Matrix*)malloc(sizeof(Matrix));
-    if (mat == NULL) {
+    new_mat = (Matrix*)malloc(sizeof(Matrix));
+    if (new_mat == NULL) {
         printf("Unallocated matrix.\n");
         exit(1);
     }
     
-    mat->len_rows = rows;
-    mat->len_columns = columns;
-    mat->values = (float**)malloc(rows*sizeof(float*));
+    new_mat->len_rows = rows;
+    new_mat->len_columns = columns;
+    new_mat->values = (float**)malloc(rows*sizeof(float*));
 
     for (i = 0; i < rows; i++) {
-        mat->values[i] = (float*)malloc(sizeof(float));
-        if (mat->values[i] == NULL) {
+        new_mat->values[i] = (float*)malloc(columns*sizeof(float));
+        if (new_mat->values[i] == NULL) {
             printf("Unallocated row.\n");
             exit(1);
         }
-        for (j = 0; i < columns; i++) {
-            mat->values[i][j] = 0.0;
+        for (j = 0; j < columns; j++) {
+            new_mat->values[i][j] = 0;
         }
     }
-    return mat;
+    return new_mat;
 }
 
 void free_matrix (Matrix* mat) {
