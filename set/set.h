@@ -1,0 +1,22 @@
+typedef struct set Set;
+
+Set* create_set ();
+Set* clone_set (Set*);
+void error_pointer (char[]);
+int check_set (Set*, int);
+int check_sets (Set*, Set*, int);
+int check_element (Set*, float);
+int find_element(Set*, float);
+int length_set(Set*);
+void free_set(Set*);
+int attach_set(Set*, float, int);
+void remove_element(Set*, float);
+void fill_set(Set*);
+float access_set(Set*, int);
+void print_set(Set*);
+Set* sum_set(Set*, Set*);
+Set* inter_set(Set*, Set*);
+Set* diff_set(Set*, Set*);
+Set* union_set(Set*, Set*);
+Set* comp_set(Set*, Set*);
+int sub_set(Set*, Set*);
