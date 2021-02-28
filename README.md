@@ -1,2 +1,2 @@
-# Algorithms-And-Data-Structures
+# DSA: Data Structures & Algorithms (in C)
  
