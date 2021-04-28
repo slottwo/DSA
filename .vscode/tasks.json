@@ -3,7 +3,7 @@
 	"tasks": [
 		{
 			"type": "cppbuild",
-			"label": "C/C++: gcc.exe arquivo de build ativo",
+			"label": "C/C++: gcc build active file",
 			"command": "C:\\MinGW\\bin\\gcc.exe",
 			"args": [
 				// "-g",
@@ -13,7 +13,7 @@
 				"-g",
 				"${relativeFileDirname}\\*.c",
 				"-o",
-				"${relativeFileDirname}\\${fileBasenameNoExtension}.exe"
+				"${relativeFileDirname}\\.bin\\${fileDirname}.exe"
 			],
 			"options": {
 				"cwd": "${workspaceFolder}"
@@ -22,7 +22,7 @@
 				"$gcc"
 			],
 			"group": "build",
-			"detail": "compilador: C:\\MinGW\\bin\\gcc.exe"
+			"detail": "compiler: C:\\MinGW\\bin\\gcc.exe"
 		}
 	]
 }
